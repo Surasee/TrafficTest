@@ -51,10 +51,9 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void clickAboutMe(View view){
-        Intent objIntent = new Intent(Intent.ACTION_VIEW);
-        objIntent.setData(Uri.parse("http://www.google.com"));
-        startActivity(objIntent);
+    public void clickTest(View view){
+        startActivity(new Intent(this,TestActivity.class));
+
     } //click
 
 

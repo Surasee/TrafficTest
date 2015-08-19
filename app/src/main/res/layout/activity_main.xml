@@ -17,8 +17,8 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/about_me"
-        android:onClick="clickAboutMe"
+        android:text="@string/test"
+        android:onClick="clickTest"
         android:id="@+id/button"
         android:layout_alignParentBottom="true" />
 
