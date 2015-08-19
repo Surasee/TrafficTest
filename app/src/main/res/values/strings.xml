@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Traffic</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title">ป้ายจาราจร ต้องรู้</string>
+    <string name="test">ทดสอบ</string>
+    <string name="about_me">About Me</string>
+    <string name="title_activity_show_detail">ShowDetailActivity</string>
+</resources>
