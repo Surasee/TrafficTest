@@ -49,7 +49,7 @@ public class TestActivity extends AppCompatActivity {
         if (radioAnInt == 0) {
             Toast.makeText(TestActivity.this, "กรุณาตอบคำถาม", Toast.LENGTH_SHORT).show();
         } else {
-
+            checkScore();
             myModel();
 
         }
@@ -66,7 +66,7 @@ public class TestActivity extends AppCompatActivity {
 
             //checkScore
 
-            checkScore();
+            //checkScore();
 
             indexAnInt += 1;
 
@@ -131,18 +131,20 @@ public class TestActivity extends AppCompatActivity {
             public void onClick(DialogInterface dialogInterface, int i) {
                 onStart();
                 choiceRadioGroup.clearCheck();
+                
                 dialogInterface.dismiss();
             }
         });
         objBuilder.setPositiveButton("Read", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                Intent objIntent = new Intent(TestActivity.this,MainActivity.class);
+                Intent objIntent = new Intent(TestActivity.this, MainActivity.class);
                 startActivity(objIntent);
+
                 dialogInterface.dismiss();
             }
         });
-
+        objBuilder.show();
     }//showAnswerDialog
 
     private void radioController() {
@@ -189,6 +191,9 @@ public class TestActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         //setup
+
+        scoreAnInt = 0;
+        indexAnInt = 0;
 
         questionStrings = getResources().getStringArray(R.array.question);
 
