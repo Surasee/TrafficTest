@@ -20,7 +20,7 @@ public class TestActivity extends AppCompatActivity {
 
 
     private String[] questionStrings;
-    private int[] imageInts,choiceInts;
+    private int[] imageInts, intTime;
     private int radioAnInt,indexAnInt;
 
 
@@ -75,13 +75,13 @@ public class TestActivity extends AppCompatActivity {
 
         // chengequestion
         questionTextView.setText(questionStrings[AnInt]);
+        // changeImage
         TrafficImageView.setImageResource(imageInts[AnInt]);
-        choiceRadioGroup.clearCheck();
-
-
-        String[] strChoice = getResources().getStringArray(choiceInts[AnInt]);
 
         //Choice
+        choiceRadioGroup.clearCheck();
+        String[] strChoice = getResources().getStringArray(intTime[AnInt]);
+
         choice1RadioButton.setText(strChoice[0]);
         choice2RadioButton.setText(strChoice[1]);
         choice3RadioButton.setText(strChoice[2]);
@@ -159,17 +159,20 @@ public class TestActivity extends AppCompatActivity {
         imageInts[9] = R.drawable.traffic_10;
 
 
-        choiceInts = new int[10];
-        choiceInts[0] = R.array.times1;
-        choiceInts[1] = R.array.times2;
-        choiceInts[2] = R.array.times3;
-        choiceInts[3] = R.array.times4;
-        choiceInts[4] = R.array.times5;
-        choiceInts[5] = R.array.times6;
-        choiceInts[6] = R.array.times7;
-        choiceInts[7] = R.array.times8;
-        choiceInts[8] = R.array.times9;
-        choiceInts[9] = R.array.times10;
+        intTime = new int[10];
+        intTime[0] = R.array.times1;
+        intTime[1] = R.array.times2;
+        intTime[2] = R.array.times3;
+        intTime[3] = R.array.times4;
+        intTime[4] = R.array.times5;
+        intTime[5] = R.array.times6;
+        intTime[6] = R.array.times7;
+        intTime[7] = R.array.times8;
+        intTime[8] = R.array.times9;
+        intTime[9] = R.array.times10;
+
+
+        
 
 
 
