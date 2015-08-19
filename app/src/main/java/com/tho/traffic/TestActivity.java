@@ -4,14 +4,31 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.TextView;
 
 public class TestActivity extends AppCompatActivity {
+    private TextView questionTextView;
+    private ImageView TrafficImageView;
+    private RadioGroup choiceRadioGroup;
+    private RadioButton choice1RadioButton, choice2RadioButton,
+            choice3RadioButton, choice4RadioButton;
+    private Button button;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
+        questionTextView = (TextView) findViewById(R.id.txtQuestion);
+        TrafficImageView = (ImageView) findViewById(R.id.imvTraffic);
+        choiceRadioGroup = (RadioGroup) findViewById(R.id.ragChoice);
+        button = (Button) findViewById(R.id.button2);
+
+
     }
 
     @Override
