@@ -131,7 +131,6 @@ public class TestActivity extends AppCompatActivity {
             public void onClick(DialogInterface dialogInterface, int i) {
                 onStart();
                 choiceRadioGroup.clearCheck();
-                
                 dialogInterface.dismiss();
             }
         });
@@ -140,7 +139,6 @@ public class TestActivity extends AppCompatActivity {
             public void onClick(DialogInterface dialogInterface, int i) {
                 Intent objIntent = new Intent(TestActivity.this, MainActivity.class);
                 startActivity(objIntent);
-
                 dialogInterface.dismiss();
             }
         });
