@@ -12,7 +12,7 @@ public class ShowDetailActivity extends AppCompatActivity {
     private ImageView showTrafficImageView; //สร้างวัตถุ รูปภาพ
 
 
-//123456
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
