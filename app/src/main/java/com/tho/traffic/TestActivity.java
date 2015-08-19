@@ -6,7 +6,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 public class TestActivity extends AppCompatActivity {
-    
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,4 +35,4 @@ public class TestActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
-}
+}//class
