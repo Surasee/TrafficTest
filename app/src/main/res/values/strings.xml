@@ -7,4 +7,5 @@
     <string name="test">ทดสอบ</string>
     <string name="about_me">About Me</string>
     <string name="title_activity_show_detail">ShowDetailActivity</string>
+    <string name="title_activity_test">TestActivity</string>
 </resources>
