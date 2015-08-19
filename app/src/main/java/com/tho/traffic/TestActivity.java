@@ -76,8 +76,19 @@ public class TestActivity extends AppCompatActivity {
         // chengequestion
         questionTextView.setText(questionStrings[AnInt]);
         TrafficImageView.setImageResource(imageInts[AnInt]);
+        choiceRadioGroup.clearCheck();
 
-        choiceInts = new int[10];
+
+        String[] strChoice = getResources().getStringArray(choiceInts[AnInt]);
+
+        //Choice
+        choice1RadioButton.setText(strChoice[0]);
+        choice2RadioButton.setText(strChoice[1]);
+        choice3RadioButton.setText(strChoice[2]);
+        choice4RadioButton.setText(strChoice[3]);
+
+
+
 
 
     }//changeView
@@ -148,7 +159,17 @@ public class TestActivity extends AppCompatActivity {
         imageInts[9] = R.drawable.traffic_10;
 
 
-
+        choiceInts = new int[10];
+        choiceInts[0] = R.array.times1;
+        choiceInts[1] = R.array.times2;
+        choiceInts[2] = R.array.times3;
+        choiceInts[3] = R.array.times4;
+        choiceInts[4] = R.array.times5;
+        choiceInts[5] = R.array.times6;
+        choiceInts[6] = R.array.times7;
+        choiceInts[7] = R.array.times8;
+        choiceInts[8] = R.array.times9;
+        choiceInts[9] = R.array.times10;
 
 
 
