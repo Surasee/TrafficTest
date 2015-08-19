@@ -1,5 +1,8 @@
 package com.tho.traffic;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -21,7 +24,7 @@ public class TestActivity extends AppCompatActivity {
 
     private String[] questionStrings;
     private int[] imageInts, intTime;
-    private int radioAnInt,indexAnInt;
+    private int radioAnInt,indexAnInt, scoreAnInt;
 
 
 
@@ -61,15 +64,38 @@ public class TestActivity extends AppCompatActivity {
 
         } else {
 
+            //checkScore
+
+            checkScore();
+
             indexAnInt += 1;
+
+
+
 
             //changView
             changeView(indexAnInt);
+
+
+
+
 
         }
 
 
     }//mymodel
+
+    private void checkScore() {
+
+        int[] intTrueAnswer = {1,2,3,4,1,2,3,4,1,2};
+        if(radioAnInt == intTrueAnswer[indexAnInt] ){
+
+            scoreAnInt+=1;
+
+        }
+
+
+    }//cheackScore
 
     private void changeView(int AnInt) {
 
@@ -95,7 +121,27 @@ public class TestActivity extends AppCompatActivity {
 
     private void showAnswerDialog() {
 
-
+        AlertDialog.Builder objBuilder = new AlertDialog.Builder(this);
+        objBuilder.setIcon(R.drawable.icon_myaccount);
+        objBuilder.setTitle("Show Score");
+        objBuilder.setMessage("Total score " + Integer.toString(scoreAnInt) + " .");
+        objBuilder.setCancelable(false);//ห้าม undo
+        objBuilder.setNegativeButton("Play Now!", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                onStart();
+                choiceRadioGroup.clearCheck();
+                dialogInterface.dismiss();
+            }
+        });
+        objBuilder.setPositiveButton("Read", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Intent objIntent = new Intent(TestActivity.this,MainActivity.class);
+                startActivity(objIntent);
+                dialogInterface.dismiss();
+            }
+        });
 
     }//showAnswerDialog
 
@@ -172,7 +218,8 @@ public class TestActivity extends AppCompatActivity {
         intTime[9] = R.array.times10;
 
 
-        
+
+
 
 
 
