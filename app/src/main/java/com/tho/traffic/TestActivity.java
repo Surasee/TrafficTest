@@ -1,15 +1,15 @@
 package com.tho.traffic;
 
-import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class TestActivity extends AppCompatActivity {
     private TextView questionTextView;
@@ -18,11 +18,10 @@ public class TestActivity extends AppCompatActivity {
     private RadioButton choice1RadioButton, choice2RadioButton,
             choice3RadioButton, choice4RadioButton;
 
-    private Button button;
 
     private String[] questionStrings;
-    private int[] imageInts;
-    private int radioAnInt;
+    private int[] imageInts,choiceInts;
+    private int radioAnInt,indexAnInt;
 
 
 
@@ -36,20 +35,65 @@ public class TestActivity extends AppCompatActivity {
         BindWidget();
 
 
-
         //radio Controller
         radioController();
 
 
-
     }//oncreate
+
+    public void clickAnswer(View view) {
+
+        if (radioAnInt == 0) {
+            Toast.makeText(TestActivity.this, "กรุณาตอบคำถาม", Toast.LENGTH_SHORT).show();
+        } else {
+
+            myModel();
+
+        }
+
+    }//clickAnswer
+
+    private void myModel() {
+
+        if (indexAnInt == 9) {
+
+            showAnswerDialog();
+
+        } else {
+
+            indexAnInt += 1;
+
+            //changView
+            changeView(indexAnInt);
+
+        }
+
+
+    }//mymodel
+
+    private void changeView(int AnInt) {
+
+        // chengequestion
+        questionTextView.setText(questionStrings[AnInt]);
+        TrafficImageView.setImageResource(imageInts[AnInt]);
+
+        choiceInts = new int[10];
+
+
+    }//changeView
+
+    private void showAnswerDialog() {
+
+
+
+    }//showAnswerDialog
 
     private void radioController() {
         choiceRadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
 
-                switch (i){
+                switch (i) {
                     case R.id.radioButton:
                         radioAnInt = 1;
                         break;
@@ -82,6 +126,7 @@ public class TestActivity extends AppCompatActivity {
         choice3RadioButton = (RadioButton) findViewById(R.id.radioButton3);
         choice4RadioButton = (RadioButton) findViewById(R.id.radioButton4);
 
+
     }
 
     @Override
@@ -101,6 +146,13 @@ public class TestActivity extends AppCompatActivity {
         imageInts[7] = R.drawable.traffic_08;
         imageInts[8] = R.drawable.traffic_09;
         imageInts[9] = R.drawable.traffic_10;
+
+
+
+
+
+
+
 
         String[] strChoice = getResources().getStringArray(R.array.times1);
 
